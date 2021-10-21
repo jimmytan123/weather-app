@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+  font-family: 'Lato', sans-serif;
+  background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  background-size: cover;
+  background-position: center;
+  line-height: 1.75;
+}

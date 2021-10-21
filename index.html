@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="weather-card">
+      <form class="weather-search" action="/">
+        <input class="search-bar" type="text" />
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M23.809 21.646l-6.205-6.205c1.167-1.605 1.857-3.579 1.857-5.711 0-5.365-4.365-9.73-9.731-9.73-5.365 0-9.73 4.365-9.73 9.73 0 5.366 4.365 9.73 9.73 9.73 2.034 0 3.923-.627 5.487-1.698l6.238 6.238 2.354-2.354zm-20.955-11.916c0-3.792 3.085-6.877 6.877-6.877s6.877 3.085 6.877 6.877-3.085 6.877-6.877 6.877c-3.793 0-6.877-3.085-6.877-6.877z"
+            />
+          </svg>
+        </button>
+      </form>
+      <div class="current-location-search">
+        <button id="show" class="show">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
+            /></svg
+          >Show My Location
+        </button>
+        <div id="message"></div>
+      </div>
+      <div class="weather loading">
+        <h1 class="city">Weather in Vancouver, CA</h1>
+        <p class="time">As of 9:30 AM</p>
+        <h2 class="temp">14°C</h2>
+        <div class="min-max">
+          <p class="temp-max">H: 18°C</p>
+          <p class="temp-min">L: 10°C</p>
+        </div>
+        <div class="flex">
+          <img
+            class="icon"
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+          />
+          <div class="description">Cloudy</div>
+        </div>
+        <div class="humidity">Humidity: 60%</div>
+        <div class="wind">Wind Speed: 6.2km/h</div>
+        <div class="pressure">Pressure: 1013hPa</div>
+        <div class="flex">
+          <div class="sunrise">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M24 23h-24v-2h24v2zm-24-6v2h4.069c-.041-.328-.069-.661-.069-1s.028-.672.069-1h-4.069zm7.103-5.312l-2.881-2.881-1.415 1.414 2.881 2.881c.412-.529.886-1.003 1.415-1.414zm3.897-1.688h2v-5h3l-4-4-4 4h3v5zm8.931 7c.041.328.069.661.069 1s-.028.672-.069 1h4.069v-2h-4.069zm-7.931-5c-3.314 0-6 2.686-6 6 0 .341.035.674.09 1h11.82c.055-.326.09-.659.09-1 0-3.314-2.686-6-6-6zm7.778-3.193l-2.881 2.881c.528.411 1.003.886 1.414 1.414l2.881-2.881-1.414-1.414z"
+              />
+            </svg>
+            <span>7:26 AM</span>
+          </div>
+          <div class="sunset">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M24 23h-24v-2h24v2zm-24-6v2h4.069c-.041-.328-.069-.661-.069-1s.028-.672.069-1h-4.069zm7.103-5.312l-2.881-2.881-1.415 1.414 2.881 2.881c.412-.529.886-1.003 1.415-1.414zm5.897-10.688h-2v5h-3l4 4 4-4h-3v-5zm6.931 16c.041.328.069.661.069 1s-.028.672-.069 1h4.069v-2h-4.069zm-7.931-5c-3.314 0-6 2.686-6 6 0 .341.035.674.09 1h11.82c.055-.326.09-.659.09-1 0-3.314-2.686-6-6-6zm7.778-3.193l-2.881 2.881c.528.411 1.003.886 1.414 1.414l2.881-2.881-1.414-1.414z"
+              />
+            </svg>
+            <span>6:32 PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-container">
+        <button class="trigger">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 18h-2v-8h2v8zm-1-12.25c.69 0 1.25.56 1.25 1.25s-.56 1.25-1.25 1.25-1.25-.56-1.25-1.25.56-1.25 1.25-1.25z"
+            />
+          </svg>
+        </button>
+        <div class="modal">
+          <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h1>About Weather App</h1>
+            <h2>Tools: HTML, Sass, JavaScript</h2>
+            <p>Overview:</p>
+            <p>
+              The weather app allows you to search for a city or click Show My
+              Location to get the weather info for your location. The background
+              image is from Unsplash API and it changes according to different
+              cities. This app is built using OOP JavaScript, HTML, Sass, and
+              using the OpenWeather API to fetch weather data. The app is based
+              on a basic tutorial by Jonah Lawrence and I redesigned and added
+              addition features such as modal box, show my location, error
+              handling and also show more weather info for a single location.
+            </p>
+            <p class="copyright">&copy; 2021 Jimmy(Zhixi) Tan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="./scripts/app.js"></script>
+  </body>
+</html>

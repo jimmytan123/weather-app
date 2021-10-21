@@ -1,0 +1,76 @@
+.weather-card {
+  position: relative;
+  background-color: rgba(#212529, 0.8);
+  color: white;
+  padding: 1.4rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  margin: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  
+  h1.city {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+  }
+
+  h2.temp {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  .time {
+    margin: 0;
+  }
+
+  .description {
+    text-transform: capitalize;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .weather.loading {
+    visibility: hidden;
+    position: relative;
+    max-height: 20px;
+  }
+
+  .weather.loading::after {
+    visibility: visible;
+    content: 'Loading...';
+    position: absolute;
+    top: 0;
+  }
+
+  .min-max {
+    display: flex;
+
+    p {
+      margin: 0 1rem 0 0;
+      font-size: 1.3rem;
+    }
+  }
+
+  .sunrise,
+  .sunset {
+    margin-right: 1rem;
+    svg {
+      fill: white;
+    }
+  }
+
+  @media all and (min-width: 500px) {
+    .description {
+      font-size: 1.3rem;
+    }
+    h2.temp {
+      font-size: 3rem;
+      margin: 1rem 0;
+    }
+  }
+}

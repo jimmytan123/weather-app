@@ -1,0 +1,64 @@
+.weather-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    color: white;
+    background-color: rgba(#343a40, 0.7);
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 17px;
+    width: 80%;
+  }
+
+  button {
+    margin: 0.5rem;
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: rgba(#343a40, 0.7);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(#343a40, 0.9);
+
+      svg {
+        fill: #ffb703;
+      }
+    }
+
+    svg {
+      fill: white;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.current-location-search {
+  margin: 0.5rem 0;
+  button.show {
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+
+    svg {
+      fill: white;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        fill: #e63946;
+      }
+    }
+  }
+}
